@@ -23,7 +23,7 @@ acls:
     entities:
       ACL_Tutorial_Domain_Foos_All: GRANT
       ACL_Tutorial_Domain_Foos_isSpecial: DENY
-      ACL_Tutorial_Domain_Foos_notMe: GRANT
+      ACL_Tutorial_Domain_Foos_notMe: DENY
 
 
   Editor:

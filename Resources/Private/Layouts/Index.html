@@ -1,3 +1,4 @@
+{namespace acl=ACL\Tutorial\ViewHelpers}
 <!DOCTYPE html>
 <html>
 	<head>
@@ -21,6 +22,12 @@
 			<div class="row">
 				<f:render partial="Navigation" />
 				<div id="mainContent" class="seven column" ><f:render section="content"/></div>
+				<div class="panel five column" >
+					<acl:role />
+					<h4>
+						<acl:account />
+					</h4>
+				</div>
 			</div>
 		</div>
 	</body>
