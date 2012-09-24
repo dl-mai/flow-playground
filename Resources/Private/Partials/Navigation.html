@@ -1,0 +1,24 @@
+<nav id="navigation">
+	<ul class="nav-bar">
+		<li class="has-flyout">
+			<a href="#">ACL actions</a>
+			<a href="#" class="flyout-toggle"><span> </span></a>
+			<ul class="flyout" style="display: none; ">
+				<li><f:link.action action="index" controller="Standard">Default</f:link.action></li>
+				<li><f:link.action action="admin" controller="Standard">Admin: acces denied</f:link.action></li>
+				<li><f:link.action action="editor" controller="Standard">Editor: acces denied</f:link.action></li>
+			</ul>
+		</li>
+		<li class="has-flyout">
+			<a href="#">Foo actions</a>
+			<a href="#" class="flyout-toggle"><span> </span></a>
+			<ul class="flyout" style="display: none; ">
+				<li><f:link.action action="List" controller="Foo">Available Foo's</f:link.action></li>
+				<li><f:link.action action="index" controller="Foo">Add Foo</f:link.action></li>
+			</ul>		</li>
+		<li class="">
+			<f:link.action action="logout" controller="Login">Logout</f:link.action>
+		</li>
+	</ul>
+</nav>
+<br class="clear"/>

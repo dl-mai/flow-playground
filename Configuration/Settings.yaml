@@ -1,0 +1,22 @@
+#                                                                        #
+# Settings Configuration for the Survey package                          #
+#                                                                        #
+
+TYPO3:
+  FLOW3:
+    security:
+      authentication:
+        authenticationStrategy: oneToken
+        providers:
+          DefaultProvider:
+            provider: 'PersistedUsernamePasswordProvider'
+            entryPoint: 'WebRedirect'
+            entryPointOptions:
+              uri: 'acl.tutorial/login'
+      csrf:
+        csrfStrategy: onePerSession
+  Survey:
+    notifications:
+      to:
+        email: ''
+        name: 'Survey Admin'

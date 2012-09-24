@@ -1,0 +1,21 @@
+<f:layout name="Index" />
+
+
+<f:section name="content">
+	<f:flashMessages as="flashMessages">
+		<f:for each="{flashMessages}" as="flashMessage">
+			<div class="alert-box success five columns">
+				{flashMessage}
+			</div>
+		</f:for>
+	</f:flashMessages>
+	<h1>No Admins!</h1>
+	<p>Some data set by the controller:</p>
+	<f:security.ifHasRole role="Administrator">
+		iMa Admin
+	</f:security.ifHasRole>
+	<f:security.ifHasRole role="Editor">
+		iMa Editor
+	</f:security.ifHasRole>
+
+</f:section>

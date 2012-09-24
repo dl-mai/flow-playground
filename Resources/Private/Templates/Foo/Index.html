@@ -1,0 +1,26 @@
+<f:layout name="Index" />
+
+<f:section name="content">
+	<h2><f:translate source="Main" package="TYPO3.FLOW3">Add new Foo object!</f:translate></h2>
+	<f:flashMessages class="flashmessages" />
+	<f:form action="create" controller="Foo" object="{foo}" name="foo" section="foo" class="custom" >
+		<div class="seven columns">
+			<div class="row collapse twelve columns">
+				<div class="two mobile-one columns">
+					<span class="prefix">title</span>
+				</div>
+				<div class="ten mobile-three columns">
+					<f:form.textfield property="name" />
+				</div>
+			</div>
+			<div class="row collapse twelve columns">
+				<label for="checkbox1">
+					<f:form.checkbox property="isSpecial"  id="checkbox1" value="TRUE" />
+					<span class="custom checkbox"></span> Special
+				</label>
+			</div>
+			<hr>
+			<f:form.submit value="Speichern" class="radius button" />
+		</div>
+	</f:form>
+</f:section>

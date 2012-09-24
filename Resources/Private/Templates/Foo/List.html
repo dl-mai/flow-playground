@@ -1,0 +1,41 @@
+<f:layout name="Index" />
+
+<f:section name="content">
+	<h2>List all Foo objects!</h2>
+
+	<f:flashMessages as="flashMessages">
+			<f:for each="{flashMessages}" as="flashMessage">
+				<div class="alert-box success five columns">
+					{flashMessage}
+				</div>
+			</f:for>
+	</f:flashMessages>
+
+	<table>
+		<thead>
+		<tr>
+			<th>Foo Name</th>
+			<th>isSpecial</th>
+			<th>User Name</th>
+		</tr>
+		</thead>
+		<tbody>
+			<f:for each="{foos}" as="foo">
+				<tr>
+					<td>{foo.name}</td>
+					<td>
+						<f:if condition="{foo.isSpecial}">
+							<f:then>
+								<b>TRUE</b>
+							</f:then>
+							<f:else>
+								FALSE
+							</f:else>
+						</f:if>
+					</td>
+				<td>{foo.account.accountidentifier}</td>
+				</tr>
+			</f:for>
+		</tbody>
+	</table>
+</f:section>

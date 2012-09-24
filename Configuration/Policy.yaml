@@ -1,0 +1,40 @@
+roles:
+  Administrator: []
+  Editor: []
+  PowerEditor: [Editor]
+
+resources:
+  methods:
+    Index: method(ACL\Tutorial\Controller\StandardController->indexAction())
+    Admin: method(ACL\Tutorial\Controller\StandardController->adminAction())
+    Editor: method(ACL\Tutorial\Controller\StandardController->editorAction())
+#    test3: method(ACL\Tutorial\Controller\FooController->.*())
+#    test4: method(ACL\Tutorial\Controller\FillingStationController->.*())
+  entities:
+    ACL_Tutorial_Domain_Model_Foo:
+      ACL_Tutorial_Domain_Foos_All: 'ANY'
+      ACL_Tutorial_Domain_Foos_isSpecial: 'this.isSpecial == TRUE"'
+      ACL_Tutorial_Domain_Foos_notMe: 'current.securityContext.account != this.account || this.account == NULL'
+acls:
+  Administrator:
+    methods:
+      Index:  GRANT
+      Admin: GRANT
+    entities:
+      ACL_Tutorial_Domain_Foos_All: GRANT
+      ACL_Tutorial_Domain_Foos_isSpecial: DENY
+      ACL_Tutorial_Domain_Foos_notMe: GRANT
+
+
+  Editor:
+    methods:
+      Index: GRANT
+      Editor: GRANT
+    entities:
+      ACL_Tutorial_Domain_Foos_All: GRANT
+      ACL_Tutorial_Domain_Foos_isSpecial: GRANT
+      ACL_Tutorial_Domain_Foos_notMe: DENY
+  PowerEditor:
+    entities:
+      ACL_Tutorial_Domain_Foos_All: GRANT
+      ACL_Tutorial_Domain_Foos_isSpecial: GRANT

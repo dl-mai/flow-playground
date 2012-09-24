@@ -1,0 +1,24 @@
+<f:layout name="Index" />
+
+
+<f:section name="content">
+	<f:flashMessages as="flashMessages">
+		<f:for each="{flashMessages}" as="flashMessage">
+			<div class="alert-box success">
+				{flashMessage}
+			</div>
+		</f:for>
+	</f:flashMessages>
+	<f:security.ifHasRole role="Administrator">
+		<h1>I'm a Administrator!</h1>
+	</f:security.ifHasRole>
+	<f:security.ifHasRole role="Editor">
+		<f:then>
+			<h1>I'm a Editor!</h1>
+		</f:then>
+		<f:else>
+			<p>This text is shown if you are not a Editor!</p>
+		</f:else>
+	</f:security.ifHasRole>
+
+</f:section>
