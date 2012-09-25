@@ -22,8 +22,8 @@ acls:
       Admin: GRANT
     entities:
       ACL_Tutorial_Domain_Foos_All: GRANT
-      ACL_Tutorial_Domain_Foos_isSpecial: DENY
-      ACL_Tutorial_Domain_Foos_notMe: DENY
+      ACL_Tutorial_Domain_Foos_isSpecial: GRANT
+      ACL_Tutorial_Domain_Foos_notMe: GRANT
 
 
   Editor:
@@ -32,8 +32,7 @@ acls:
       Editor: GRANT
     entities:
       ACL_Tutorial_Domain_Foos_All: GRANT
-      ACL_Tutorial_Domain_Foos_isSpecial: GRANT
-      ACL_Tutorial_Domain_Foos_notMe: DENY
+      ACL_Tutorial_Domain_Foos_isSpecial: DENY
   PowerEditor:
     entities:
       ACL_Tutorial_Domain_Foos_All: GRANT

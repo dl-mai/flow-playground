@@ -1,12 +1,12 @@
 -
-  name: 'Reports Route'
+  name: 'Login Route'
   uriPattern: 'login/{@action}'
   defaults:
     @package: 'ACL.Tutorial'
     @controller: 'Login'
     @format: 'html'
 -
-  name: 'Reports'
+  name: 'Login'
   uriPattern: 'login'
   defaults:
     @package: 'ACL.Tutorial'
@@ -15,7 +15,7 @@
     @action: 'index'
 -
   name: 'Standard Route'
-  uriPattern: '/{@action}'
+  uriPattern: '{@action}'
   defaults:
     @package: 'ACL.Tutorial'
     @controller: 'Standard'

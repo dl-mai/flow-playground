@@ -47,7 +47,7 @@ class AccountCommandController extends \TYPO3\FLOW3\Cli\CommandController {
 				$role = 'Editor';
 				break;
 			case 'powereditor';
-				$role = 'powereditor';
+				$role = 'PowerEditor';
 				break;
 			default:
 				$this->outputLine('Invalid user role');
