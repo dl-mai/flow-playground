@@ -15,7 +15,7 @@
     @action: 'index'
 -
   name: 'Standard Route'
-  uriPattern: '/{@action}'
+  uriPattern: '{@action}'
   defaults:
     @package: 'ACL.Tutorial'
     @controller: 'Standard'
