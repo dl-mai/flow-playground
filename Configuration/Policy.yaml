@@ -12,8 +12,9 @@ resources:
 #    test4: method(ACL\Tutorial\Controller\FillingStationController->.*())
   entities:
     ACL_Tutorial_Domain_Model_Foo:
-      ACL_Tutorial_Domain_Foos_All: 'ANY'
-      ACL_Tutorial_Domain_Foos_isSpecial: 'this.isSpecial == TRUE"'
+      # filter nicht oeffentliche eines anderen accounts
+      ACL_Tutorial_Domain_Foos_isSpecial: 'this.isSpecial == FALSE && current.securityContext.account != this.account'
+      # filter alle die nicht mir gehoeren
       ACL_Tutorial_Domain_Foos_notMe: 'current.securityContext.account != this.account || this.account == NULL'
 acls:
   Administrator:
@@ -21,7 +22,6 @@ acls:
       Index:  GRANT
       Admin: GRANT
     entities:
-      ACL_Tutorial_Domain_Foos_All: GRANT
       ACL_Tutorial_Domain_Foos_isSpecial: GRANT
       ACL_Tutorial_Domain_Foos_notMe: GRANT
 
@@ -30,10 +30,7 @@ acls:
     methods:
       Index: GRANT
       Editor: GRANT
-    entities:
-      ACL_Tutorial_Domain_Foos_All: GRANT
-      ACL_Tutorial_Domain_Foos_isSpecial: DENY
   PowerEditor:
     entities:
-      ACL_Tutorial_Domain_Foos_All: GRANT
-      ACL_Tutorial_Domain_Foos_isSpecial: GRANT
+      ACL_Tutorial_Domain_Foos_notMe: GRANT
+      ACL_Tutorial_Domain_Foos_isSpecial: DENY
